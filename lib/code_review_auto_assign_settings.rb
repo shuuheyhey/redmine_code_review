@@ -134,7 +134,7 @@ module CodeReviewAutoAssignSettings
 
     def match_with_change?(change)
       filters.each { |filter|
-        next unless filter.match?(change.path)
+        next unless filter.match?(change.relative_path)
         return filter.accept?
       }
       return accept_for_default
